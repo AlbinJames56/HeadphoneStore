@@ -1,137 +1,211 @@
-*{
-    font-family: "Teko", sans-serif;
-     
+* {
+  font-family: "Teko", sans-serif;
 }
 
-.banner{
-background-image: url(https://c4.wallpaperflare.com/wallpaper/800/486/460/headphones-yellow-background-hd-5k-wallpaper-preview.jpg);
-height: 60rem;
-background-repeat: no-repeat;
-background-size: cover ;
+.banner {
+  background-image: url(https://c4.wallpaperflare.com/wallpaper/800/486/460/headphones-yellow-background-hd-5k-wallpaper-preview.jpg);
+  height: 60rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+body {
+  overflow-x: hidden;
+  background: rgb(255, 187, 0);
+  background: linear-gradient(
+    90deg,
+    rgb(255, 200, 0) 0%,
+    #f8e35a 31%,
+    #f8e35a 49%,
+    #f8e35a 68%,
+    rgb(255, 200, 0) 100%
+  );
+}
+.banner .row {
+  padding-top: 22rem;
+  padding-left: 5rem;
+}
 
+.hottest .card {
+  max-width: 18rem;
+  width: 17rem;
+  height: 20rem;
+  margin: 30px 10px;
+  padding: 20px 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+  transition: 0.3s ease-in-out;
+  position: relative;
 }
-body{
-overflow-x: hidden;
-background: rgb(255,187,0);
-background: linear-gradient(90deg, rgb(255, 200, 0) 0%, #f8e35a 31%, #f8e35a 49%, #f8e35a 68%,rgb(255, 200, 0) 100%);
+.hottest .card:hover {
+  height: 30rem;
 }
-.banner .row{
-padding-top: 22rem;
-padding-left: 5rem;
+.hottest .card .img-container {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  box-shadow: 1px 1px 4px 5px rgba(0, 0, 0, 0.2);
 }
-.text1 {
-background-image: url(https://m.media-amazon.com/images/I/4143VjTBaHL._SX300_SY300_QL70_FMwebp_.jpg);
-background-size: cover;
-height: 19rem;
+.hottest .card .img-container img {
+  max-width: 100%;
 }
-.text2 {
-background-image: url(https://m.media-amazon.com/images/I/31Vu9iEHP0L._SX300_SY300_QL70_FMwebp_.jpg);
-background-size: cover;
-height: 19rem;
+.headphones {
+  position: absolute;
+  margin-left: -240px;
+  margin-top: 12px;
 }
-.text3 {
-background-image: url(https://m.media-amazon.com/images/I/61gYxcIGjvL._SL1500_.jpg);
-background-size: cover;
-height: 19rem;
+.hottest .card .card-body {
+  position: relative;
+  margin-top: -50px;
 }
-.text4 {
-background-image: url(https://m.media-amazon.com/images/I/31QB73-5IEL._SX300_SY300_QL70_FMwebp_.jpg);
-background-size: cover;
-height: 19rem;
+.hottest .card .card-title {
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
 }
-.contNew{
-display: flex;
-justify-content: space-around;
-gap: 1rem; 
+
+.hottest .card-text {
+  margin-top: 10px;
+  padding: 10px 15px;
+  color: #111;
+  visibility: none;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+.hottest .card:hover .card-text {
+  display: block;
+  opacity: 1;
+}
+.hottest .card .price {
+  position: absolute;
+  top: 50px; /* Adjust this value as needed to position it right below the card-title */
+  left: 15px; /* Adjust if needed */
+  transition: top 0.3s ease-in-out;
+}
+
+.hottest .card:hover .price {
+  top: 210px; /* Adjust this value so it moves under card-text on hover */
+}
+
+.hottest .card-text:hover {
+  visibility: visible;
+  opacity: 1;
+  margin-top: -40px;
+  transition-delay: 0.3s;
+}
+
+.contNew {
+  display: flex;
+  justify-content: space-around;
+  gap: 1rem;
 }
 .cardNew {
-position:relative; 
-width: 18rem; 
-display: flex;
-justify-content: space-around;
-
+  position: relative;
+  width: 17rem;
+  display: flex;
+  justify-content: space-around;
 }
 .cardNew img {
-transition: filter 0.3s;
-width: 100%;
-height: auto;
+  transition: filter 0.3s;
+  width: 100%;
+  height: auto;
 }
 .cardNew .icon {
-position: absolute;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
-font-size: 3rem;
-color: rgba(0, 0, 0, 0.8);
-opacity: 0;
-transition: opacity 0.3s;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3rem;
+  color: rgba(0, 0, 0, 0.8);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.cardNew:hover {
+  transform: scale(1.05);
 }
 .cardNew:hover .icon {
-opacity: 1;
+  opacity: 1;
 }
 .cardNew:hover img {
-filter: blur(5px);
+  filter: blur(5px);
 }
 .cardNew-caption {
-position: absolute;
-bottom: 10px;
-left: 10px;
-color: white;
-font-size: 1.2rem;
-opacity: 0;
-transition: opacity 0.3s;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  color: white;
+  font-size: 1.2rem;
+  opacity: 0;
+  transition: opacity 0.3s;
 }
 .cardNew:hover .cardNew-caption {
-opacity: 1;
+  opacity: 1;
 }
 
-.buyForUs1{
-background-image: url(https://www.shutterstock.com/image-vector/simple-racing-start-number-01-260nw-2135058571.jpg);
-background-size: cover;
-height: 19rem;
+.btn:hover {
+  transform: scale(1.025);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 5px 10px;
 }
-.buyForUs2{
-background-image: url(https://www.shutterstock.com/image-vector/simple-racing-start-number-02-260nw-2135058651.jpg);
-background-size: cover;
-height: 19rem;
+.one {
+  font-size: 200px;
+  position: relative;
+  position: absolute;
 }
-.buyForUs3{
-background-image: url(https://www.shutterstock.com/image-vector/simple-racing-start-number-03-260nw-2135058555.jpg);
-background-size: cover;
-height: 19rem;
-}
-.buyForUs4{
-background-image: url(https://www.shutterstock.com/image-vector/simple-racing-start-number-04-260nw-2135058573.jpg);
-background-size: cover;
-height: 19rem;
-}
-.buyForUs1 h1{
-margin-top: 122px;
-border-color: rgb(238, 234, 234);
-color: rgb(242, 192, 64);
-text-shadow: 2px 2px 4px #d80000;
+.buyForUs1 {
+  position: absolute;
 
+  margin-top: 100px;
+  position: relative;
 }
-.buyForUs2 h1{
-margin-top: 122px;
-border-color: rgb(238, 234, 234);
-color: rgb(242, 192, 64);
-text-shadow: 2px 2px 4px #d80000;
 
+.credntials .card {
+  position: relative;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  transition: all 0.5s ease;
+  cursor: pointer;
+  user-select: none;
+  z-index: 1;
+  overflow: hidden;
 }
-.buyForUs3 h1{
-margin-top: 122px;
 
-border-color: rgb(238, 234, 234);
-color: rgb(242, 192, 64);
-text-shadow: 2px 2px 4px #d80000;
-
+.credntials .card:hover {
+  transform: scale(1.025);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 5px 10px;
 }
-.buyForUs4 h1{
-margin-top: 140px;
-margin-left: 10px;
-border-color: rgb(238, 234, 234);
-color: rgb(242, 192, 64);
-text-shadow: 2px 2px 4px #d80000;
+.credntials .card:hover .backgroundEffect {
+  position: absolute;
+  bottom: 0;
+  height: 160px;
+  width: 100%;
+  width: 100%;
+  background: #f2f967;
+  z-index: -1;
+  transition: height 0.3s ease-in;
+  animation: popBackground 0.5s ease-in;
+}
 
+@keyframes popBackground {
+  0% {
+    height: 20px;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+  }
+
+  50% {
+    height: 80px;
+    border-top-left-radius: 75%;
+    border-top-right-radius: 75%;
+  }
+
+  75% {
+    height: 160px;
+    border-top-left-radius: 85%;
+    border-top-right-radius: 85%;
+  }
+
+  100% {
+    height: 320px;
+    border-top-left-radius: 100%;
+    border-top-right-radius: 100%;
+  }
 }
